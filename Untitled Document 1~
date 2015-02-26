@@ -1,0 +1,11 @@
+import turtle
+class cell():
+    # __init__ is going to be called per every new astroid we create a new astroid
+    def __init__(self,piece,column,row,x,y,color):
+        self.size = size
+        self.x = x
+        self.y = y
+	self.column = column
+	self.row = row
+ 
+
