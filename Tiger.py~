@@ -1,0 +1,26 @@
+class Piece(Turtle)
+	def __init__(self,cell,color): ###color has to be 'w' or 'b'
+	RawTurtle.__init__(self)
+	self.queen = False
+	self.color = color
+	self.cell = cellnum
+
+	def checkUpRight(self)#if possible, merge
+		#check the right cell.
+		#find color
+		#if color==not my team, I can eat.
+		
+	def checkUpLeft(self)#if possible, merge
+		
+		#check the right cell.
+		#find color
+		#if color==not my team, I can eat.
+
+	def checkDownLeft(self)#if possible, merge
+		
+		#check the right cell.
+		#find color
+		#if color==not my team, I can eat.
+	
+	
+	
