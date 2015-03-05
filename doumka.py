@@ -176,6 +176,7 @@ for i in range(0,4):
     fill_black_board_sq(START_X+100*i,START_Y)
 START_Y+=100
 for i in range(0,4):
+##      self.checkDownRight
     fill_black_board_sq(START_X+100*i,START_Y)
 START_Y+=100
 for i in range(0,4):
@@ -215,6 +216,77 @@ turtle.write("G", move=False, align="center", font=("Arial", 15, "bold"))
 turtle.goto(START_X+25+350,START_Y-23)
 turtle.write("H", move=False, align="center", font=("Arial", 15, "bold"))
 
+
+
+
+#PIECES CLASS
+class Piece(Turtle)
+    def __init__(self,cell,color): ###color has to be 'w' or 'b'
+    RawTurtle.__init__(self)
+    self.queen = False
+    self.color = color
+    self.cell = cell
+    
+    def getColor(self):
+        return self.color
+    def getCell(self):
+        return self.cell
+    def setQueen(self):
+        self.queen=True
+
+
+
+#interactions with cell class+ pieces#
+
+
+
+##  def checkUpRight(self): #if possible, merge
+
+##      #check the right cell.
+##      #find color
+##      #if color==not my team, check cell x+1, y+1
+        #if cell==empty , I can eat.
+##     
+##      
+##  def checkUpLeft(self): #if possible, merge
+
+##      #check the right cell.
+##      #find color
+##      #if color==not my team, check one cell y+1, x-1
+        #if empty,I can eat.
+##      #return true/false
+##
+##  def checkDownLeft(self): #if possible, merge
+##      #check if queen 
+##      #check the right cell.
+##      #find color
+##      #if color==not my team, check cell x-1, y-1
+        #if cell==empty, I can eat.
+##      #return true/false
+##  
+##  def checkDownRight(self): #if possible, merge
+##      #check if queen 
+##      #check the right cell.
+##      #find color
+##      #if color==not my team, check x+1, y-1
+        #if cell==empty, I can eat.
+##      #return true/false
+##
+##  def whereCanGo
+##      self.checkUpLeft
+##      self.checkUpRight
+##      self.checkDownLeft
+##      self.checkDownRight
+##
+##
+##  def function():
+##      self.color==PlayerColor
+##
+##      if cell==empty():
+##          #add to "possible moves" list
+##      if Piece.color==
+
+
 #_________________# check for a win___________________
 
 
@@ -224,4 +296,3 @@ turtle.write("H", move=False, align="center", font=("Arial", 15, "bold"))
 
 
 turtle.mainloop()
-
