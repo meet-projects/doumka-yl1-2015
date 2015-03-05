@@ -11,16 +11,22 @@ BOARD_WIDTH = 8
 START_X = -175
 START_Y = -100
 CELL_SIZE = 50 # side length of the square
-PLAYER1 = 'white'
-PLAYER2 = 'blue'
-board = [[0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7],
-         [0,1,2,3,4,5,6,7]]
+PLAYER1 = 'w'
+PLAYER2 = 'b'
+#board = [["black","white","black","white","black","white","black","white"], #raw0
+         #["white","black","white","black","white","black","white","black"], #raw1
+         #["black","white","black","white","black","white","black","white"], #raw2
+         #["white","black","white","black","white","black","white","black"], #raw3
+         #["black","white","black","white","black","white","black","white"], #raw4
+         #["white","black","white","black","white","black","white","black"], #raw5
+         #["black","white","black","white","black","white","black","white"], #raw6
+         #["white","black","white","black","white","black","white","black"]] #raw7
+for rowNum in range(8):
+    for colNum in range(8):
+        if (rowNum+colNum)%2 == 0:
+            board[rowNum][colNum] = Cell(rowNum, colNum, "b")
+        else:
+            board[rowNum][colNum] = Cell(rowNum, colNum, "w")
 
 cur_player = 1
 
