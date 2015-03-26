@@ -1,5 +1,8 @@
-class Cell:
-	def __init__(self,col,row,color):
+import turtle
+from turtle import *
+class Cell(Turtle):
+	def __init__(self,canvas, row,col,color):
+		RawTurtle.__init__(self, canvas)
 		self.col = col
 		self.row = row
 		self.piece = None
@@ -9,7 +12,7 @@ class Cell:
 		return self.col
 
 	def getRow(self): 
-		return self.raw
+		return self.row
 
 	def getColor(self):
 		return self.color
@@ -19,4 +22,4 @@ class Cell:
 	
 	def setPiece(self):
 		self.piece = piece
-	
+
