@@ -1,9 +1,11 @@
-class Piece(Turtle)
+import turtle
+from turtle import *
+class Piece(Turtle):
 	def __init__(self,cell,color): ###color has to be 'w' or 'b'
-	RawTurtle.__init__(self)
-	self.queen = False
-	self.color = color
-	self.cell = cell
+		RawTurtle.__init__(self)
+		self.queen = False
+		self.color = color
+		self.cell = cell
 	
 	def getColor(self):
 		return self.color

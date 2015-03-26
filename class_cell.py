@@ -1,5 +1,5 @@
 class Cell:
-	def __init__(self,col,row,color,piece):
+	def __init__(self,col,row,color):
 		self.col = col
 		self.row = row
 		self.piece = None
@@ -17,6 +17,6 @@ class Cell:
 	def getPiece(self) :
 		return self.piece
 	
-	def setPiece(self)
+	def setPiece(self):
 		self.piece = piece
 	

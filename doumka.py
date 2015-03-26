@@ -1,6 +1,11 @@
 # DO NOT CHANGE THE NEXT 3 LINES
 import turtle
 import random
+import Tiger
+from Tiger import *
+import class_cell
+from class_cell import *
+
 turtle.hideturtle()
 turtle.tracer(0)
 # variables that set up the game
@@ -13,20 +18,23 @@ START_Y = -100
 CELL_SIZE = 50 # side length of the square
 PLAYER1 = 'w'
 PLAYER2 = 'b'
-#board = [["black","white","black","white","black","white","black","white"], #raw0
-         #["white","black","white","black","white","black","white","black"], #raw1
-         #["black","white","black","white","black","white","black","white"], #raw2
-         #["white","black","white","black","white","black","white","black"], #raw3
-         #["black","white","black","white","black","white","black","white"], #raw4
-         #["white","black","white","black","white","black","white","black"], #raw5
-         #["black","white","black","white","black","white","black","white"], #raw6
-         #["white","black","white","black","white","black","white","black"]] #raw7
+#board = [["black","white","black","white","black","white","black","white"], #row0
+         #["white","black","white","black","white","black","white","black"], #row1
+         #["black","white","black","white","black","white","black","white"], #row2
+         #["white","black","white","black","white","black","white","black"], #row3
+         #["black","white","black","white","black","white","black","white"], #row4
+         #["white","black","white","black","white","black","white","black"], #row5
+         #["black","white","black","white","black","white","black","white"], #row6
+         #["white","black","white","black","white","black","white","black"]] #row7
+board = []
+for i in range(8):
+    board.append([])
 for rowNum in range(8):
     for colNum in range(8):
         if (rowNum+colNum)%2 == 0:
-            board[rowNum][colNum] = Cell(rowNum, colNum, "b")
+            board[rowNum].append(Cell(rowNum, colNum, "b"))
         else:
-            board[rowNum][colNum] = Cell(rowNum, colNum, "w")
+            board[rowNum].append(Cell(rowNum, colNum, "w"))
 
 cur_player = 1
 
@@ -218,21 +226,6 @@ turtle.write("H", move=False, align="center", font=("Arial", 15, "bold"))
 
 
 
-
-#PIECES CLASS
-class Piece(Turtle)
-    def __init__(self,cell,color): ###color has to be 'w' or 'b'
-    RawTurtle.__init__(self)
-    self.queen = False
-    self.color = color
-    self.cell = cell
-    
-    def getColor(self):
-        return self.color
-    def getCell(self):
-        return self.cell
-    def setQueen(self):
-        self.queen=True
 
 
 

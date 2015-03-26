@@ -1,3 +1,4 @@
+
 class Piece(Turtle)
 	def __init__(self,cell,color): ###color has to be 'w' or 'b'
 	RawTurtle.__init__(self)
