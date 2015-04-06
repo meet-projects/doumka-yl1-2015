@@ -1,0 +1,7 @@
+import turtle
+turtle.pd()
+turtle.goto(50,0)
+turtle.pu()
+turtle.goto(0,0)
+turtle.dot(50)
+turtle.mainloop()
