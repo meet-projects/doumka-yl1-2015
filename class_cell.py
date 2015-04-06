@@ -20,6 +20,6 @@ class Cell(Turtle):
 	def getPiece(self) :
 		return self.piece
 	
-	def setPiece(self):
+	def setPiece(self,piece):
 		self.piece = piece
 

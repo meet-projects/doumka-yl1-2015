@@ -319,6 +319,7 @@ def checkMove(p,c):
 
 
 def availableMoves(p):
+    global goingToEat
     regularList = []
     eatList = []
     col1 = p.getCell().getCol()
@@ -332,8 +333,10 @@ def availableMoves(p):
                 elif checkMove (p,tempC) == "eat":
                     eatList.append (tempC)
         if len(eatList) != 0:
+            goingToEat = True
             return eatList
         else:
+            goingToEat = False
             return regularList
         
 
@@ -351,7 +354,8 @@ def convXYtoRowCol(x,y):
     diff = (x-topLeftCorner[0], y-topLeftCorner[1])
     boardLoc = (int(diff[0]/CELL_SIZE), int(diff[1]/CELL_SIZE)) ##col, row 
     return boardLoc
- currentPossibleMoves = []
+currentPossibleMoves = []
+goingToEat = False
 def pieceClicked(x,y):
     global currentPossibleMoves
 
@@ -360,6 +364,8 @@ def pieceClicked(x,y):
     piece = cellOfPiece.getPiece()
     if selectedPiece == piece:
         selectedPiece = None
+        currentPossibleMoves = []
+        goingToEat = False
     else:
         selectedPiece = piece
         currentPossibleMoves = availableMoves(piece)
@@ -367,6 +373,18 @@ def pieceClicked(x,y):
 #check if empty
 
 selectedPiece = None ## None or Piece Object
+
+
+def cellClicked(x,y):
+    if selectedPiece != None:
+       col,row = convXYtoRowCol()
+       cell = board [row][col]
+       if cell in currentPossibleMoves:
+           selectedPiece.setCell(cell)
+           cell.setPiece(selectedPiece)
+
+def move(piece,cell):
+    
 
 
 
