@@ -11,12 +11,12 @@ def check4win():
 	if(bc==0):
 		#white wins
 		turtle.write("player 1 wins!", True, align="center", font=("Arial", 80, "normal"))
-		return true
+		return True
 	if(wc==0):
 		#black wins
 		turtle.write("player 2 wins!", True, align="center", font=("Arial", 80, "normal"))
-		return true
-	return false
+		return True
+	return False
 
 turtle.mainloop()
 
