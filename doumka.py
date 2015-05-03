@@ -7,7 +7,7 @@ import class_cell
 from class_cell import *
 
 turtle.hideturtle()
-##turtle.tracer(0)
+#turtle.tracer(0,1)
 # variables that set up the game
 # CHANGE THESE AS NEEDED
 turtle.speed(0)
@@ -35,9 +35,9 @@ for i in range(8):
 for rowNum in range(8):
 	for colNum in range(8):
 		if (rowNum+colNum)%2 == 0:
-			board[rowNum].append(Cell(screen,rowNum, colNum, "b"))
+			board[rowNum].append(Cell(screen,rowNum, colNum, rowNum ,colNum, "b"))
 		else:
-			board[rowNum].append(Cell(screen,rowNum, colNum, "w"))
+			board[rowNum].append(Cell(screen,rowNum, colNum, rowNum ,colNum, "w"))
 
 
 ##cur_player = 1
@@ -373,7 +373,6 @@ def print2(x,y):
 	##turtle.onscreenclick(print)
 def convXYtoRowCol(x,y):
 	topLeftCorner = (-3.5*CELL_SIZE, 6*CELL_SIZE)
-	##print("topLeft: " + str(topLeftCorner))
 	diff = (x-topLeftCorner[0], topLeftCorner[1]-y)
 	boardLoc = (int(diff[0]/CELL_SIZE), int(diff[1]/CELL_SIZE)) ##col, row 
 	return boardLoc
@@ -407,14 +406,14 @@ for i in range (5,8):
 		if i % 2 == 0:
 			t = Piece(screen, board[i][j], "b")
 			board[i][j-1].setPiece(t)
-			t.shape("triangle")
+			t.shape("circle")
 			t.pu()
 			t.goto(getCenter(t.getCell()))
 			pieces.append(t)
 		else:
 			t = Piece(screen, board[i][j+1], "b")
 			board[i][j].setPiece(t)
-			t.shape("triangle")
+			t.shape("circle")
 			t.pu()
 			t.goto(getCenter(t.getCell()))
 			pieces.append(t)
@@ -423,7 +422,7 @@ for i in range (0,3):
 		if i % 2 == 0:
 			t = Piece(screen, board[i][j], "w")
 			board[i][j-1].setPiece(t)
-			t.shape("triangle")
+			t.shape("circle")
 			t.showturtle()
 			t.pu()
 			t.goto(getCenter(t.getCell()))
@@ -431,7 +430,7 @@ for i in range (0,3):
 		else:
 			t = Piece(screen, board[i][j+1], "w")
 			board[i][j].setPiece(t)
-			t.shape("triangle")
+			t.shape("circle")
 			t.pu()
 			t.goto(getCenter(t.getCell()))
 			pieces.append(t)
